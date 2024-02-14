@@ -1,0 +1,20 @@
+button {
+  width: 100%;
+  padding: 0.6rem 0rem;
+  color: #fff;
+  font-family: Lexend Deca;
+  font-style: normal;
+  line-height: normal;
+}
+.primary {
+  background-color: #32c0c0;
+}
+.danger {
+  background-color: #e1341e;
+}
+.outline{
+  background-color: transparent;
+  border: 2px solid #E5E5E5;
+  outline: none;
+  color: #000000;
+}
