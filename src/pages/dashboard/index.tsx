@@ -1,22 +1,39 @@
-// import { Line } from 'react-chartjs-2';
-
-
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
-export const data = {
-  labels,
-  datasets: [
-    {
-      fill: true,
-      label: 'Dataset 2',
-      data: labels.map((label) => label),
-      borderColor: 'rgb(53, 162, 235)',
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
-    },
-  ],
-};
+import Chart from "react-apexcharts";
 
 const Dashboard = () => {
+  const data = {
+    options: {
+      chart: {
+        id: "basic-bar"
+      },
+      xaxis: {
+        categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      },
+      fill: {
+        colors: ['#32C0C0'],
+        gradient: {
+          shade: 'light',
+          type: "vertical",
+          shadeIntensity: 0.5,
+          gradientToColors: undefined,
+          inverseColors: false,
+          opacityFrom: 1,
+          opacityTo: 0,
+          stops: [0, 50, 100],
+          colorStops: []
+        },
+      },
+      stroke: {
+        colors: ['#32C0C0']
+      }
+    },
+    series: [
+      {
+        name: "series-1",
+        data: [1, 2, 3, 2, 1, 2,3]
+      }
+    ]
+  };
 
   return (
     <div>
@@ -64,13 +81,21 @@ const Dashboard = () => {
           <p className="opacity-25">Total 500 Room</p>
         </div>
       </div>
-    <div className="flex flex-col gap-4 mt-8">
-      <div className="bg-white shadow-listing-card basis-2/4 p-4 rounded">
-      {/* <Line options={[]} data={data} /> */}
+      <div className="flex flex-col gap-4 mt-8">
+        <div className="bg-white shadow-listing-card basis-2/4 p-4 rounded">
+          <Chart
+            options={data.options}
+            series={data.series}
+            type="area"
+            // width="500"
+            height={400}
+          />
 
+        </div>
+        <div className="bg-white shadow-listing-card flex-1 p-4 rounded">
+          calendar
+        </div>
       </div>
-      <div className="bg-white shadow-listing-card flex-1 p-4 rounded">2</div>
-    </div>
     </div>
   )
 }
