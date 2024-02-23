@@ -23,6 +23,11 @@ import Setting from "./pages/dashboard/setting";
 import UpdateListing from "./pages/dashboard/listing/update";
 import CreateListing from "./pages/dashboard/listing/create";
 import BookListing from "./pages/dashboard/listing/book-listing";
+import PersonalInformation from "./pages/dashboard/setting/pages/personal-information";
+import EmployeesManagement from "./pages/dashboard/setting/pages/employees-management";
+import BookingOpening from "./pages/dashboard/setting/pages/booking-opening";
+import LoginAndPassword from "./pages/dashboard/setting/pages/login-and-password";
+import LanguageAndRegion from "./pages/dashboard/setting/pages/language-and-region";
 
 const router = createBrowserRouter([
   {
@@ -69,7 +74,29 @@ const router = createBrowserRouter([
       },
       {
         path: ROUTES.SETTING,
-        element: <Setting />
+        element: <Setting />,
+        children: [
+          {
+            path: `${ROUTES.SETTING}/personal-information`,
+            element: <PersonalInformation />
+          },
+          {
+            path: `${ROUTES.SETTING}/employees-management`,
+            element: <EmployeesManagement />
+          },
+          {
+            path: `${ROUTES.SETTING}/booking-opening`,
+            element: <BookingOpening />
+          },
+          {
+            path: `${ROUTES.SETTING}/login-and-password`,
+            element: <LoginAndPassword />
+          },
+          {
+            path: `${ROUTES.SETTING}/language-and-region`,
+            element: <LanguageAndRegion />
+          }
+        ]
       }
     ],
   },

@@ -1,9 +1,7 @@
-import React from 'react'
+import Layout from './layout'
 
 const Setting = () => {
-  return (
-    <div>Setting</div>
-  )
+  return <Layout />
 }
 
-export default Setting
+export default Setting;

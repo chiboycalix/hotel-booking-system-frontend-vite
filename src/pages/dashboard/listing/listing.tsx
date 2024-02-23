@@ -1,4 +1,3 @@
-import React from 'react'
 import WarnIconRed from '../../../assets/images/danger-icon.svg'
 import { Button, Loader, Modal } from '../../../components'
 import { IListing } from '../../../interface/listing'
@@ -13,8 +12,8 @@ interface IListingCardProps {
   setIsVisible: (isVisible: boolean) => void
   isDeleteListingLoading: boolean
   isDeleteListingError: boolean
-  isVisible: boolean
-  deleteListingError: any
+  isVisible: boolean;
+  deleteListingError: any;
 }
 
 const ListingCard = (props: IListingCardProps) => {
